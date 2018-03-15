@@ -1,0 +1,113 @@
+ext {
+  versions = [
+          support       : "25.3.1",
+          firebase      : '11.8.0',
+          okHttp        : "3.8.1",
+          retrofit      : '2.3.0',
+          rxJava2       : '2.1.1',
+          rxAndroid2    : '2.0.1',
+          espresso      : '2.2.2',
+          espressoRunner: '0.5',
+          powerMock     : '1.6.6',
+          hamcrest      : '1.3',
+          restMock      : '0.2.1',
+          dagger        : '2.11',
+          butterKnife   : '8.6.0',
+          chuck         : '1.0.4',
+          gson          : '2.8.1',
+          glide         : '3.8.0',
+          timber        : '4.5.1',
+          tSpoon        : '1.0.1',
+          parcler       : '1.1.9',
+          stetho        : '1.5.0',
+          calligraphy   : '2.3.0',
+  ]
+
+  supportDeps = [
+          appcompatV7           : "com.android.support:appcompat-v7:$versions.support",
+          design                : "com.android.support:design:$versions.support",
+          cardView              : "com.android.support:cardview-v7:$versions.support",
+          vectorDrawableSupport : "com.android.support:support-vector-drawable:$versions.support",
+          animatedVectorDrawable: "com.android.support:animated-vector-drawable:$versions.support",
+          palette               : "com.android.support:palette-v7:$versions.support"
+  ]
+
+  rxJava = [
+          rxJava2   : "io.reactivex.rxjava2:rxjava:$versions.rxJava2",
+          rxAndroid2: "io.reactivex.rxjava2:rxandroid:$versions.rxAndroid2"
+  ]
+
+  retrofit = [
+          retrofit     : "com.squareup.retrofit2:retrofit:$versions.retrofit",
+          rxAdapter    : "com.squareup.retrofit2:adapter-rxjava:$versions.retrofit",
+          rxAdapter2   : "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit",
+          gsonConverter: "com.squareup.retrofit2:converter-gson:$versions.retrofit",
+  ]
+
+  okHttp = [
+          logger: "com.squareup.okhttp3:logging-interceptor:$versions.okHttp",
+          okhttp: "com.squareup.okhttp3:okhttp:$versions.okHttp"
+  ]
+
+  fireBase = [
+          firebaseMessaging: "com.google.firebase:firebase-messaging:$versions.firebase"
+  ]
+
+
+
+  misc = [
+          multidex   : "com.android.support:multidex:1.0.1",
+          gson       : "com.google.code.gson:gson:$versions.gson",
+          timber     : "com.jakewharton.timber:timber:$versions.timber",
+          butterKnife: "com.jakewharton:butterknife:$versions.butterKnife",
+          dagger     : "com.google.dagger:dagger:$versions.dagger",
+          glide      : "com.github.bumptech.glide:glide:$versions.glide",
+          tSpoon     : "com.tspoon.traceur:traceur:$versions.tSpoon",
+          parcler    : "org.parceler:parceler-api:$versions.parcler",
+          stetho     : "com.facebook.stetho:stetho:$versions.stetho",
+          calligraphy: "uk.co.chrisjenx:calligraphy:$versions.calligraphy",
+  ]
+
+  annotationProcess = [
+          butterknife: "com.jakewharton:butterknife-compiler:$versions.butterKnife",
+          parcler    : "org.parceler:parceler:$versions.parcler",
+          dagger     : "com.google.dagger:dagger-compiler:$versions.dagger"
+  ]
+
+  mockito = [mockito: "org.mockito:mockito-core:2.8.9"]
+  junit = [junit: "junit:junit:4.12"]
+  restMock = [restMock: "com.github.andrzejchm.RESTMock:android:$versions.restMock"]
+
+  unitTest = [
+          harcrestCore        : "org.hamcrest:hamcrest-core:$versions.hamcrest",
+          harmcrestLib        : "org.hamcrest:hamcrest-library:$versions.hamcrest",
+          hamcrestIntegration : "org.hamcrest:hamcrest-integration:$versions.hamcrest",
+          robolectric         : "org.robolectric:robolectric:3.2.2",
+          supportAnnotation   : "com.android.support:support-annotations:$versions.support",
+          restMock            : "com.github.andrzejchm.RESTMock:android:$versions.restMock",
+          easymock            : "org.easymock:easymock:3.4",
+          assertj             : "com.squareup.assertj:assertj-android:1.1.1",
+          powermockCore       : "org.powermock:powermock-core:$versions.powerMock",
+          powermockModuleJunit: "org.powermock:powermock-module-junit4:$versions.powerMock",
+          powermockApiEasymock: "org.powermock:powermock-api-easymock:$versions.powerMock"
+  ] + junit + mockito + restMock
+
+  androidTests = [
+          espressoCore   : "com.android.support.test.espresso:espresso-core:$versions.espresso",
+          espressoContrib: "com.android.support.test.espresso:espresso-contrib:$versions.espresso",
+          espressoIntents: "com.android.support.test.espresso:espresso-intents:$versions.espresso",
+          testRunner     : "com.android.support.test:runner:$versions.espressoRunner",
+          testRules      : "com.android.support.test:rules:$versions.espressoRunner",
+  ] + mockito + restMock
+
+  supportLibs = supportDeps.values()
+  networkLibs = retrofit.values() + okHttp.values()
+  rxJavaLibs = rxJava.values()
+  misc = misc.values()
+  unitTestLibs = unitTest.values()
+  androidTestsLibs = androidTests.values() + supportLibs
+  annotationProcessLibs = annotationProcess.values()
+  fireBaseCloudMessage = fireBase.values()
+  leakCannary = "com.squareup.leakcanary:leakcanary-android:1.5.1"
+  daggerCompiler = "com.google.dagger:dagger-compiler:$versions.dagger"
+}
