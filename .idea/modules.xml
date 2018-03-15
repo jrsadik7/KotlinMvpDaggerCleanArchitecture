@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/KotlinMvpDaggerClean.iml" filepath="$PROJECT_DIR$/KotlinMvpDaggerClean.iml" />
+      <module fileurl="file://$PROJECT_DIR$/data_layer/data_layer.iml" filepath="$PROJECT_DIR$/data_layer/data_layer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/domain_layer/domain_layer.iml" filepath="$PROJECT_DIR$/domain_layer/domain_layer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/presentation_layer/presentation_layer.iml" filepath="$PROJECT_DIR$/presentation_layer/presentation_layer.iml" />
+    </modules>
+  </component>
+</project>
