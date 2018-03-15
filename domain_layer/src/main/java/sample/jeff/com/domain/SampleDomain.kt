@@ -1,6 +1,6 @@
 package sample.jeff.com.domain
 
-class Domain {
+class SampleDomain {
     companion object {
         fun getDomainString(): String {
             return "DOMAIN STRING"
