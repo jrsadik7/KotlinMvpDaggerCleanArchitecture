@@ -4,6 +4,7 @@ ext {
     ]
 
     presentationDependencies = [
+
             //SUPPORT LIBRARIES
             appCompatv7             : "com.android.support:appcompat-v7:$versions.support",
             design                  : "com.android.support:design:$versions.support",
@@ -51,5 +52,37 @@ ext {
     ]
 
     presentationDeps = presentationDependencies.values()
+
+    domainDependencies = [
+
+            // Coroutines
+            kotlinxCoroutinesCore   : "org.jetbrains.kotlinx:kotlinx-coroutines-core:0.19.3",
+            kotlinxCoroutinesAndroid: "org.jetbrains.kotlinx:kotlinx-coroutines-android:0.19.3",
+
+            // Coroutines - Retrofit extention
+            kotlinCoroutinesRetrofit: "ru.gildor.coroutines:kotlin-coroutines-retrofit:0.8.2",
+
+            //RX JAva
+            rxjava                  : "io.reactivex.rxjava2:rxjava:2.1.10",
+            rxandroid               : "io.reactivex.rxjava2:rxandroid:2.0.2",
+    ]
+
+    domainDeps = domainDependencies.values()
+
+    dataDependencies = [
+
+            // Coroutines
+            kotlinxCoroutinesCore   : "org.jetbrains.kotlinx:kotlinx-coroutines-core:0.19.3",
+            kotlinxCoroutinesAndroid: "org.jetbrains.kotlinx:kotlinx-coroutines-android:0.19.3",
+
+            // Coroutines - Retrofit extention
+            kotlinCoroutinesRetrofit: "ru.gildor.coroutines:kotlin-coroutines-retrofit:0.8.2",
+
+            //RX JAva
+            rxjava                  : "io.reactivex.rxjava2:rxjava:2.1.10",
+            rxandroid               : "io.reactivex.rxjava2:rxandroid:2.0.2",
+    ]
+
+    dataDeps = dataDependencies.values()
 
 }
