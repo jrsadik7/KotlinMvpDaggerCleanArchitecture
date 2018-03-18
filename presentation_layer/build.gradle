@@ -21,7 +21,9 @@ android {
 
     }
 
-
+    androidExtensions {
+        experimental = true
+    }
 
     lintOptions {
         disable 'RestrictedApi'
@@ -60,50 +62,32 @@ dependencies {
     implementation project(':domain_layer')
     implementation project(':data_layer')
 
-    implementation rootProject.ext.presentationDeps
-    //================================================
+    implementation supportLibs
+    implementation fontCalligraphy
+    implementation gsonLibs
+    implementation kotlinLibs
+    api rxJavaLibs
+    api networkLibs
+    implementation otherLibs
 
-    //Memory Leaks
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.1'
-    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
-    testImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
+    // APT dependencies
+    kapt annotationProcessorLibs
+    kaptTest dagger.daggerCompiler
+    kaptTest dagger.daggerAndroidProcessor
+    kaptAndroidTest dagger.daggerCompiler
+    kaptAndroidTest dagger.daggerAndroidProcessor
 
-    // Dagger 2
-    implementation 'com.google.dagger:dagger:2.14.1'
-    kapt 'com.google.dagger:dagger-compiler:2.14.1'
-    compileOnly 'org.glassfish:javax.annotation:10.0-b28'
+    testImplementation unitTestLibs
+    androidTestImplementation androidTestsLibs
 
-
-    //butterknife
-    implementation "com.jakewharton:butterknife:8.8.1"
-    implementation "com.jakewharton:butterknife-compiler:8.8.1"
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-
-
-
-    // Sherlock -> Report crashes in notification, helpful for testers/testing
-    debugImplementation('com.github.ajitsing:sherlock:1.0.2@aar') {
-        transitive = true
-    }
-
-    releaseImplementation 'com.github.ajitsing:sherlock-no-op:1.0.2@aar'
+    //Google Truth
+    testCompile googleTruth.truth
 
     // Chuck -> For API calls notification
     debugImplementation "com.readystatesoftware.chuck:library:1.0.4"
     releaseImplementation "com.readystatesoftware.chuck:library-no-op:1.0.4"
 
 
-
-    //glide
-    implementation 'com.github.bumptech.glide:glide:4.6.1'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
-
-    //parcler
-    implementation 'org.parceler:parceler-api:1.1.10'
-    annotationProcessor 'org.parceler:parceler:1.1.10'
-
-
-    //================================================
 }
 repositories {
     mavenCentral()

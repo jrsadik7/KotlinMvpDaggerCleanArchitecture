@@ -5,7 +5,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':domain_layer')
 
-    implementation rootProject.ext.dataDeps
 
 }
 
