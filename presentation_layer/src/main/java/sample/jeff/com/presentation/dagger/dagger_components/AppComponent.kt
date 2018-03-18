@@ -1,6 +1,7 @@
 package sample.jeff.com.presentation.dagger.dagger_components
 
 import dagger.Component
+import sample.jeff.com.presentation.dagger.dagger_modules.AppModule
 import javax.inject.Singleton
 
 /**
@@ -8,6 +9,6 @@ import javax.inject.Singleton
  */
 
 @Singleton
-@Component
+@Component(modules = arrayOf(AppModule::class))
 interface AppComponent {
 }

@@ -14,6 +14,7 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import sample.jeff.com.presentation.BuildConfig
+import sample.jeff.com.presentation.utils.DataManager
 import timber.log.Timber
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
@@ -23,7 +24,7 @@ import javax.inject.Singleton
  * Created by  on 16/3/18.
  */
 
-@Module
+@Module(includes = arrayOf(PreferenceModule::class))
 class NetworkModule(val context: Context) {
     private val baseUrl: String
         get() = BuildConfig.SERVER_URL
@@ -88,9 +89,10 @@ class NetworkModule(val context: Context) {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()
     }
-    /* @Provides
+
+    @Provides
     @Singleton
-    internal fun provideHttpResponseInterceptor(): CustomHttpResponseInterceptor {
-        return CustomHttpResponseInterceptor()
-    }*/
+    internal fun provideDataManager(sharedPrefsHelper: SharedPrefsHelper): DataManager {
+        return DataManager(context, sharedPrefsHelper)
+    }
 }
