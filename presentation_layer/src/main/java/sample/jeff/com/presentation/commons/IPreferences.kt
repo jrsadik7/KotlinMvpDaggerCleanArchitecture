@@ -1,4 +1,4 @@
-package sample.jeff.com.presentation.utils
+package sample.jeff.com.presentation.commons
 
 /**
  * Created by  on 18/3/18.

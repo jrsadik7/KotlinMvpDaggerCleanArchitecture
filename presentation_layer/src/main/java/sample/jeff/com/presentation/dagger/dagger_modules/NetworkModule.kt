@@ -14,7 +14,7 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import sample.jeff.com.presentation.BuildConfig
-import sample.jeff.com.presentation.utils.DataManager
+import sample.jeff.com.presentation.commons.DataManager
 import timber.log.Timber
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton

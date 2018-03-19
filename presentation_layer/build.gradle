@@ -65,7 +65,9 @@ dependencies {
     implementation supportLibs
     implementation fontCalligraphy
     implementation gsonLibs
+    implementation stethoLibs
     implementation kotlinLibs
+    implementation ankoLibs
     api rxJavaLibs
     api networkLibs
     implementation otherLibs
@@ -81,12 +83,24 @@ dependencies {
     androidTestImplementation androidTestsLibs
 
     //Google Truth
-    testCompile googleTruth.truth
+    testImplementation googleTruth.truth
 
     // Chuck -> For API calls notification
     debugImplementation "com.readystatesoftware.chuck:library:1.0.4"
     releaseImplementation "com.readystatesoftware.chuck:library-no-op:1.0.4"
 
+    // Sherlock -> Report crashes in notification, helpful for testers/testing
+    debugImplementation('com.github.ajitsing:sherlock:1.0.2@aar') {
+        transitive = true
+    }
+    releaseImplementation 'com.github.ajitsing:sherlock-no-op:1.0.2@aar'
+
+    implementation 'com.tspoon.traceur:traceur:1.0.1'
+
+    //butterknife
+    implementation "com.jakewharton:butterknife:8.8.1"
+    implementation "com.jakewharton:butterknife-compiler:8.8.1"
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
 }
 repositories {
